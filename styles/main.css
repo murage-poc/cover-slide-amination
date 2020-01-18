@@ -1,0 +1,154 @@
+/**
+ * 1. Generic styles
+ * 2. Toggle button
+ * 3. Columns == tiles
+ * 4. Animations */
+.columns {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-top: -0.75rem;
+}
+
+.columns:last-child {
+  margin-bottom: -0.75rem;
+}
+
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0.75rem;
+}
+
+.columns {
+  display: flex;
+}
+
+.column.is-4 {
+  flex: none;
+  width: 33.33333%;
+}
+
+.btn {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.14), 0 1px 5px 0px rgba(0, 0, 0, 0.12);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  line-height: 1.56;
+  border-radius: 4px;
+  border: 0;
+  margin: 0;
+  outline: none;
+  vertical-align: center;
+  text-decoration: none;
+  background-color: #001a00;
+  color: white;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-shadow: none;
+  cursor: pointer;
+}
+.btn.btn-sm {
+  padding: 6px 12px;
+  line-height: initial;
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+}
+
+/* 1. CUSTOM GENERIC STYLES */
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.mt {
+  margin-top: 15px;
+}
+
+.has-text-centered {
+  text-align: center !important;
+}
+
+.container {
+  width: 100%;
+  padding: 0.75em;
+}
+
+/* 2. TOGGLE BUTTON STYLES */
+.btn-toggle {
+  position: absolute;
+  margin-top: 0px;
+  left: 300px;
+}
+
+/* 3. COLUMN TILES STYLE */
+.columns.tles .column {
+  animation: slide-in;
+  visibility: hidden;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  transform-origin: bottom;
+  text-align: center;
+  color: white;
+  background: black;
+  height: 300px;
+}
+.columns.tles .column:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.columns.tles .column:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.columns.tiles.collapse .column {
+  animation: slide-out;
+  visibility: visible;
+  animation-duration: 3s;
+  transform-origin: bottom;
+  animation-fill-mode: forwards;
+}
+.columns.tiles.collapse .column:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.columns.tiles.collapse .column:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+/* 4  ANIMATIONS */
+@keyframes slide-in {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+    visibility: visible;
+  }
+}
+@keyframes slide-out {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+    visibility: hidden;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

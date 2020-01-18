@@ -1,0 +1,88 @@
+/**
+  1. Generic styles
+  2. Toggle button
+  3. Columns == tiles
+  4. Animations
+
+@import "_variables"
+@import "_flex"
+@import "_button"
+
+/* 1. CUSTOM GENERIC STYLES
+*,
+::after,
+::before
+  box-sizing: inherit
+
+
+body, html
+  margin: 0
+  padding: 0
+
+html
+  box-sizing: border-box
+
+.mt
+  margin-top: 15px
+
+.has-text-centered
+  text-align: center!important
+.container
+  width: 100%
+  padding: 0.75em // important to prevent overflow on Y axis
+
+/* 2. TOGGLE BUTTON STYLES
+.btn-toggle
+  position: absolute
+  margin-top: $btn-margin-top
+  left: 300px
+
+/* 3. COLUMN TILES STYLE
+.columns.tles
+  .column
+    animation: slide-in
+    visibility: hidden // to avoid initial element height flicker
+    animation-duration: 3s
+    animation-fill-mode: forwards //keep the final value
+    transform-origin: bottom //start scale animation from bottom
+    text-align: center
+    color: $column-color
+    background: $column-background
+    height: $column-height
+
+  .column:nth-child(2)
+    animation-delay: 0.2s
+
+  .column:nth-child(3)
+    animation-delay: 0.6s
+
+.columns.tiles.collapse
+    .column
+      animation: slide-out
+      visibility: visible
+      animation-duration: 3s
+      transform-origin: bottom
+      animation-fill-mode: forwards
+
+    .column:nth-child(2)
+      animation-delay: 0.2s
+
+    .column:nth-child(1)
+      animation-delay: 0.6s
+
+
+/* 4  ANIMATIONS
+
+@keyframes slide-in
+  from
+    transform: scaleY(0)
+  to
+    transform: scaleY(1)
+    visibility: visible
+
+@keyframes slide-out
+  from
+    transform: scaleY(1)
+  to
+    transform: scaleY(0)
+    visibility: hidden

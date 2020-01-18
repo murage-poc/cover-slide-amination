@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="columns tiles">
+        <div class="column is-4">
+            COLUMN TILE 1 : nth(1)
+        </div>
+        <div class="column is-4">
+            COLUMN TILE 2 : nth(2)
+        </div>
+        <div class="column is-4">
+            COLUMN TILE 3 : nth(3)
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="columns">
+        <div class="column mt has-text-centered">
+            <button class="btn btn-primary btn-toggle" id="toggle-animation">
+                toggle
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tilesParentElem = document.querySelector('.columns.tiles');
+        var animationToggleButtonElem = document.getElementById('toggle-animation');
+
+        if (tilesParentElem && animationToggleButtonElem) { //prevent error if an element is undefined
+
+            animationToggleButtonElem.addEventListener('click', function () {
+
+                if (tilesParentElem.classList.contains('collapse')) { // toggle the collapse class on the columns
+                    tilesParentElem.classList.remove('collapse')
+                } else {
+                    tilesParentElem.classList.add('collapse')
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>
