@@ -100,9 +100,9 @@ html {
 
 /* 3. COLUMN TILES STYLE */
 .columns.tiles .column {
-  animation: slide-in;
+  animation-name: slide-in;
   visibility: hidden;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   transform-origin: bottom;
   text-align: center;
@@ -116,19 +116,25 @@ html {
 .columns.tiles .column:nth-child(3) {
   animation-delay: 0.6s;
 }
+.columns.tiles .column:nth-child(1) {
+  animation-delay: 0s;
+}
 
 .columns.tiles.collapse .column {
-  animation: slide-out;
+  animation-name: slide-out;
   visibility: visible;
-  animation-duration: 3s;
+  animation-duration: 2s;
   transform-origin: bottom;
   animation-fill-mode: forwards;
+}
+.columns.tiles.collapse .column:nth-child(3) {
+  animation-delay: 0s;
 }
 .columns.tiles.collapse .column:nth-child(2) {
   animation-delay: 0.2s;
 }
 .columns.tiles.collapse .column:nth-child(1) {
-  animation-delay: 0.6s;
+  animation-delay: 0.4s;
 }
 
 /* 4  ANIMATIONS */
